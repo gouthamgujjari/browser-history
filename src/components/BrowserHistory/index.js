@@ -1,4 +1,3 @@
-// src/components/BrowserHistory/index.js
 import {Component} from 'react'
 import './index.css'
 import HistoryItem from '../HistoryItem'
@@ -80,6 +79,7 @@ class BrowserHistory extends Component {
   state = {
     searchInput: '',
     historyList: initialHistoryList,
+    isDarkMode: false,
   }
 
   onChangeSearch = event => {
@@ -92,30 +92,49 @@ class BrowserHistory extends Component {
     this.setState({historyList: updatedList})
   }
 
+  toggleTheme = () => {
+    this.setState(prevState => ({isDarkMode: !prevState.isDarkMode}))
+  }
+
   render() {
-    const {searchInput, historyList} = this.state
+    const {searchInput, historyList, isDarkMode} = this.state
     const filteredList = historyList.filter(each =>
       each.title.toLowerCase().includes(searchInput.toLowerCase()),
     )
 
+    const themeClassName = isDarkMode ? 'dark-theme' : 'light-theme'
+
     return (
-      <div className="container">
+      <div className={`container ${themeClassName}`}>
         <div className="header">
-          <h1 className='heading'>History</h1>
-          <div className="searchcontainer">
-            <img
-              src="https://assets.ccbp.in/frontend/react-js/search-img.png"
-              alt="search"
-              className="searchicon"
-            />
-            <input
-              type="search"
-              placeholder="Search history"
-              className="searchinput"
-              onChange={this.onChangeSearch}
-              value={searchInput}
-            />
+          <div className="header-content">
+            <h1 className="heading">History</h1>
+            <div className="searchcontainer">
+              <img
+                src="https://assets.ccbp.in/frontend/react-js/search-img.png"
+                alt="search"
+                className="searchicon"
+              />
+              <input
+                type="search"
+                placeholder="Search history"
+                className="searchinput"
+                onChange={this.onChangeSearch}
+                value={searchInput}
+              />
+            </div>
           </div>
+          <button
+            type="button"
+            className="theme-toggle-btn"
+            onClick={this.toggleTheme}
+          >
+            <img
+              src={isDarkMode ? '/light.png' : '/night-mode.png'}
+              alt="theme logo"
+              className="theme"
+            />
+          </button>
         </div>
         <div className="resultscontainer">
           {filteredList.length === 0 ? (
@@ -127,6 +146,7 @@ class BrowserHistory extends Component {
                   key={each.id}
                   itemDetails={each}
                   onDeleteItem={this.onDeleteItem}
+                  isDarkMode={isDarkMode}
                 />
               ))}
             </ul>

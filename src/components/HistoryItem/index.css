@@ -1,31 +1,31 @@
-/* src/components/HistoryItem/index.css */
 .historyitem {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 12px 18px;
-  border-bottom: 1px solid #d7dfe9;
-  background-color: #ffffff;
+  padding: 10px 0;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.historyitem:last-child {
+  border-bottom: none;
 }
 
 .time {
-  color: #64748b;
-  font-size: 12px;
-  width: 80px;
-  flex-shrink: 0;
+  font-family: 'Roboto', sans-serif;
+  width: 100px;
+  font-weight: 400;
+  font-size: 16px;
 }
 
 .item {
   display: flex;
   align-items: center;
   flex-grow: 1;
-  margin-left: 10px;
 }
 
 .logo {
   width: 28px;
   height: 28px;
-  margin-right: 10px;
+  margin-right: 15px;
 }
 
 .details {
@@ -34,34 +34,44 @@
 }
 
 .title {
-  font-size: 14px;
-  font-weight: 500;
-  color: #475569;
-  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  font-weight: bold;
+  margin: 0 10px 0 0;
 }
 
 .url {
-  font-size: 12px;
+  font-family: 'Roboto', sans-serif;
   color: #64748b;
-  margin-top: 4px;
+  font-size: 14px;
+  margin: 0;
 }
 
 .btn {
   background: none;
   border: none;
   cursor: pointer;
-  padding: 4px;
-  border-radius: 50%;
-  
+  padding: 5px;
 }
-
 
 .delete-icon {
+  width: 20px;
   height: 20px;
-  transition: filter 0.2s ease;
 }
 
+.historyitem .time,
+.historyitem .title {
+  color: #475569;
+}
 
-.btn:hover .delete-icon {
-  filter: brightness(0) saturate(100%) invert(18%) sepia(93%) saturate(7474%) hue-rotate(1deg) brightness(97%) contrast(119%);
+.historyitem .url {
+  color: #64748b;
+}
+
+.dark-theme-item .time,
+.dark-theme-item .title {
+  color: #f8fafc;
+}
+
+.dark-theme-item .url {
+  color: #cbd5e1;
 }

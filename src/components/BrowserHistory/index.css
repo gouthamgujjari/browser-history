@@ -1,68 +1,114 @@
-/* src/components/BrowserHistory/index.css */
 .container {
-  font-family: 'Roboto', sans-serif;
-  background-color: #f8fafc;
   min-height: 100vh;
+  padding: 20px;
+  transition: background-color 0.3s, color 0.3s;
+  font-family: 'Roboto', sans-serif; 
 }
-
 .header {
-  background-color: #3367d6;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 10px;
+  padding: 10px 20px;
+  background-color: #3367d6;
+  margin-bottom: 20px;
+  position: relative;
+}
+.header-content {
+  display: flex;
+  align-items: center;
 }
 
 .heading {
-  font-size: 26px;
-  font-family: "Roboto", sans-serif;
-  color: #ffffff;
-  align-self: center;
-  margin-left: 10px;
+  font-family: 'Roboto';
+  color: white;
+  margin-right: 20px;
+  padding: auto;
 }
-
 
 .searchcontainer {
   display: flex;
   align-items: center;
-  background-color: #3367d6;
-  padding: 8px;
+  background-color: #2850a7;
   border-radius: 4px;
+  padding: 5px 10px;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .searchicon {
   width: 20px;
+  height: 20px;
   margin-right: 10px;
 }
 
 .searchinput {
-  width: 250px;
-  padding: 8px 12px;
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  font-size: 14px;
-  transition: border-color 0.2s ease, box-shadow 0.2s ease;
-}
-
-.searchinput:focus {
+  background-color: transparent;
+  border: none;
+  color: white;
+  height: 35px;
+  width: 150px;
   outline: none;
-  border-color: #007bff;
-  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+  font-family: 'Roboto';
 }
 
+.searchinput::placeholder {
+  color: #ececec;
+}
+
+.theme{
+  width: 25px;
+  height: 25px;
+}
 
 .resultscontainer {
-  padding: 30px 20px;
+  padding: 20px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
 }
 
 .historylist {
   list-style-type: none;
   padding: 0;
-  margin: 0;
 }
 
 .nohistory {
   text-align: center;
+  font-family: 'Roboto';
+  font-size: 20px;
+}
+
+.theme-toggle-btn {
+  background-color: transparent;
+  color: #3367d6;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Roboto';
+  font-weight: bold;
+}
+
+.light-theme {
+  background-color: #ececec;
   color: #475569;
-  font-size: 18px;
+}
+
+.light-theme .resultscontainer {
+  background-color: #ffffff;
+}
+
+
+.dark-theme {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+.dark-theme .resultscontainer {
+  background-color: #1e1e1e;
+  box-shadow: 0 4px 8px 0 rgba(255, 255, 255, 0.1);
+}
+
+.dark-theme .nohistory {
+  color: #f8fafc;
 }

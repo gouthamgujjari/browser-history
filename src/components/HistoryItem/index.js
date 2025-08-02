@@ -1,16 +1,17 @@
-
 import './index.css'
 
 const HistoryItem = props => {
-  const {itemDetails, onDeleteItem} = props
+  const {itemDetails, onDeleteItem, isDarkMode} = props
   const {id, timeAccessed, logoUrl, title, domainUrl} = itemDetails
 
   const deleteItem = () => {
     onDeleteItem(id)
   }
 
+  const itemThemeClassName = isDarkMode ? 'dark-theme-item' : ''
+
   return (
-    <li className="historyitem">
+    <li className={`historyitem ${itemThemeClassName}`}>
       <p className="time">{timeAccessed}</p>
       <div className="item">
         <img src={logoUrl} alt="domain logo" className="logo" />

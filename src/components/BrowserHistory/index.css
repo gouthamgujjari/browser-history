@@ -8,10 +8,11 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
+  padding: 5px 10px;
   background-color: #3367d6;
-  margin-bottom: 20px;
+  margin-bottom: 8px;
   position: relative;
+  height: 65px;
 }
 .header-content {
   display: flex;
@@ -21,8 +22,10 @@
 .heading {
   font-family: 'Roboto';
   color: white;
+  font-size: auto;
   margin-right: 20px;
-  padding: auto;
+  margin-left: 10px;
+
 }
 
 .searchcontainer {
@@ -59,6 +62,8 @@
 .theme{
   width: 25px;
   height: 25px;
+  padding: auto;
+  margin-left: 15px;
 }
 
 .resultscontainer {
@@ -81,12 +86,14 @@
 .theme-toggle-btn {
   background-color: transparent;
   color: #3367d6;
+  display: flex;
+  flex-direction: column;
   border: none;
   padding: 8px 16px;
   border-radius: 4px;
   cursor: pointer;
   font-family: 'Roboto';
-  font-weight: bold;
+  color: #ffffff;
 }
 
 .light-theme {

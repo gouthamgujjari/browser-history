@@ -134,6 +134,7 @@ class BrowserHistory extends Component {
               alt="theme logo"
               className="theme"
             />
+            {isDarkMode ? 'Light Mode' : 'Dark Mode'}
           </button>
         </div>
         <div className="resultscontainer">

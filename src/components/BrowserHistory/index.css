@@ -1,0 +1,68 @@
+/* src/components/BrowserHistory/index.css */
+.container {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f8fafc;
+  min-height: 100vh;
+}
+
+.header {
+  background-color: #3367d6;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+}
+
+.heading {
+  font-size: 26px;
+  font-family: "Roboto", sans-serif;
+  color: #ffffff;
+  align-self: center;
+  margin-left: 10px;
+}
+
+
+.searchcontainer {
+  display: flex;
+  align-items: center;
+  background-color: #3367d6;
+  padding: 8px;
+  border-radius: 4px;
+}
+
+.searchicon {
+  width: 20px;
+  margin-right: 10px;
+}
+
+.searchinput {
+  width: 250px;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.searchinput:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 0 2px rgba(0, 123, 255, 0.2);
+}
+
+
+.resultscontainer {
+  padding: 30px 20px;
+}
+
+.historylist {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nohistory {
+  text-align: center;
+  color: #475569;
+  font-size: 18px;
+}

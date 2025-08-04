@@ -130,7 +130,7 @@ class BrowserHistory extends Component {
             onClick={this.toggleTheme}
           >
             <img
-              src={isDarkMode ? '/light.png' : '/night-mode.png'}
+              src={isDarkMode ? '/bulbLight.png' : '/bulb.png'}
               alt="theme logo"
               className="theme"
             />

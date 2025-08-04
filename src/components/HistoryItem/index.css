@@ -1,49 +1,56 @@
 .historyitem {
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  align-items: flex-start;
   padding: 10px 0;
   border-bottom: 1px solid #e2e8f0;
 }
 
+.historyitem:first-child {
+  padding-top: 0;
+}
+
 .historyitem:last-child {
   border-bottom: none;
+  padding-bottom: 0;
 }
 
 .time {
   font-family: 'Roboto', sans-serif;
-  width: 100px;
-  font-weight: 400;
-  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .item {
   display: flex;
   align-items: center;
-  flex-grow: 1;
+  width: 100%;
 }
 
 .logo {
-  width: 28px;
-  height: 28px;
+  width: 24px;
+  height: 24px;
   margin-right: 15px;
 }
 
 .details {
   display: flex;
   flex-direction: column;
+  flex-grow: 1;
+  margin-right: 10px;
 }
 
 .title {
   font-family: 'Roboto', sans-serif;
   font-weight: bold;
-  margin: 0 10px 0 0;
+  margin: 0 0 5px 0;
 }
 
 .url {
   font-family: 'Roboto', sans-serif;
   color: #64748b;
-  font-size: 14px;
   margin: 0;
+  word-break: break-all;
 }
 
 .btn {
@@ -51,11 +58,23 @@
   border: none;
   cursor: pointer;
   padding: 5px;
+  align-self: flex-end;
+  transition: transform 0.2s ease-in-out;
+}
+
+.btn:hover {
+  transform: scale(1.2);
+}
+
+.btn:hover .delete-icon {
+  filter: invert(25%) sepia(80%) saturate(5000%) hue-rotate(350deg)
+    brightness(90%) contrast(120%);
 }
 
 .delete-icon {
   width: 20px;
   height: 20px;
+  transition: filter 0.2s ease-in-out;
 }
 
 .historyitem .time,
@@ -74,4 +93,22 @@
 
 .dark-theme-item .url {
   color: #cbd5e1;
+}
+
+@media screen and (min-width: 768px) {
+  .historyitem {
+    flex-direction: row;
+    align-items: center;
+  }
+  .time {
+    width: 150px;
+    margin-bottom: 0;
+  }
+  .details {
+    flex-direction: row;
+    align-items: center;
+  }
+  .title {
+    margin: 0 10px 0 0;
+  }
 }

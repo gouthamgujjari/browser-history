@@ -109,20 +109,20 @@ class BrowserHistory extends Component {
         <div className="header">
           <div className="header-content">
             <h1 className="heading">History</h1>
-            <div className="searchcontainer">
-              <img
-                src="https://assets.ccbp.in/frontend/react-js/search-img.png"
-                alt="search"
-                className="searchicon"
-              />
-              <input
-                type="search"
-                placeholder="Search history"
-                className="searchinput"
-                onChange={this.onChangeSearch}
-                value={searchInput}
-              />
-            </div>
+          </div>
+          <div className="searchcontainer">
+            <img
+              src="https://assets.ccbp.in/frontend/react-js/search-img.png"
+              alt="search"
+              className="searchicon"
+            />
+            <input
+              type="search"
+              placeholder="Search history"
+              className="searchinput"
+              onChange={this.onChangeSearch}
+              value={searchInput}
+            />
           </div>
           <button
             type="button"
@@ -134,7 +134,7 @@ class BrowserHistory extends Component {
               alt="theme logo"
               className="theme"
             />
-            {isDarkMode ? 'Light Mode' : 'Dark Mode'}
+            <p className='themeName'>{themeClassName}</p>
           </button>
         </div>
         <div className="resultscontainer">
